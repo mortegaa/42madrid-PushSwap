@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 00:01:28 by mortega-          #+#    #+#             */
-/*   Updated: 2021/08/14 14:43:48 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/08/25 16:43:45 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	print_stack(t_num a, t_num b)
 			ft_putnbr_fd(b.stack[b.len - i], 1);
 		write(1, "\n", 1);
 	}
-
 	message("--\t--\na\tb\n\n");
 }
 
@@ -43,6 +42,7 @@ int	fill_stack(t_num *a, char **argv)
 	int		len;
 	int		k;
 	int		max;
+	int		l;
 
 	k = 0;
 	max = 0;
@@ -61,6 +61,13 @@ int	fill_stack(t_num *a, char **argv)
 			else if (a->stack[k - 1] < 0)
 				if (-a->stack[k - 1] > max)
 				max = a->stack[k - 1];
+			l = -1;
+			while (++l < k - 1)
+				if (a->stack[k - 1] == a->stack[l])
+				{
+					message("Error\n");
+					exit(EXIT_FAILURE);
+				}
 
 		}
 		ft_split_free(args);
@@ -120,8 +127,14 @@ int	main(int argc, char **argv)
 	a.len = len;
 	b.len = 0;
 	max = fill_stack(&a, argv);
-	print_stack(a, b);
-	algorithm(&a, &b, max);
-	print_stack(a, b);
+	//print_stack(a, b);
+	checker_stack(&a, &b);
+	/*if (a.len < 4)
+		short_alg_3(&a, max);
+	else if (a.len < 6)
+		short_alg_5(&a, &b, max);
+	else*/
+		algorithm(&a, &b);
+	//print_stack(a, b);
 	return (0);
 }
