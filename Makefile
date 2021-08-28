@@ -10,38 +10,62 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	push_swap.c utils.c operations_1.c operations_2.c algorithm.c
+PS_SRCS	=	push_swap.c stack_actions.c utils.c operations_1.c operations_2.c algorithm.c
 
-OBJS	=	${SRCS:.c=.o}
+PS_OBJS	=	${PS_SRCS:.c=.o}
+
+CH_SRCS =	checker.c stack_actions.c utils.c operations_1.c operations_2.c
+
+CH_OBJS =	${CH_SRCS:.c=.o}
 
 Libdir	=	./srcs/LIBFT
 
 libname	=	libft.a
 
-Lib		=	${Libdir}/${libname}
+Gnldir	=	./srcs/GNL
+
+gnlname	=	gnl.a
+
+Lib	=	${Libdir}/${libname}
+
+Gnl	=	${Gnldir}/${gnlname}
 
 NAME	=	push_swap
+
+CH_NAME	=	checker
 
 CFLAGS	=	-Wall -Werror -Wextra
 
 .c.o:
 		@gcc ${CFLAGS} -c $< -o ${<:.c=.o}
 
-$(NAME):	${OBJS} ${Lib}
-			@gcc -o ${NAME} ${OBJS} ${Lib}
+$(NAME):	${PS_OBJS} ${Lib}
+			@gcc -o ${NAME} ${PS_OBJS} ${Lib}
 
-all:		${NAME}
+$(CH_NAME):	${CH_OBJS} ${Lib} ${Gnl}
+		@gcc - o ${CH_NAME} ${CH_OBJS} ${Lib} ${Gnl}
+
+all:		${NAME} ${CH_NAME}
 
 $(Lib):
 			@make -C ${Libdir} > /dev/null 2>&1
 
+$(Gnl):
+		@make -C ${Gnldir} > /dev/null 2>&1
+
+ps:		${NAME}
+
+checker:	${CH_NAME}
+
 clean:
-			rm -f ${OBJS}
+			rm -f ${PS_OBJS}
 			@make -s -C ${Libdir} clean
+			@make -s -C ${Gnldir} clean
 
 fclean:		clean
 			rm -f $(NAME)
 			@make -s -C ${Libdir} fclean
+			@make -s -C ${Gnldir} fclean
 
 re:			fclean all
 

@@ -26,7 +26,8 @@ float	ft_atof(const char *str)
 	decimal = 0;
 	while (*str == ' ' || *str == '\t')
 		str++;
-	*str == '-' ? (str++ && negative++) : 0;
+	if (*str == '-' && str++)
+		negative++;
 	while (*str >= '0' && *str <= '9')
 		numero = numero * 10 + *str++ - 48;
 	*str == '.' ? str++ : 0;

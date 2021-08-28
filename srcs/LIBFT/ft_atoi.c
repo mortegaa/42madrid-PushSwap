@@ -14,27 +14,31 @@
 
 int	ft_atoi(const char *str)
 {
-	int						negative;
+	int				negative;
 	unsigned long long		sum;
 
 	negative = 0;
 	sum = 0;
 	while (*str == '\n' || *str == ' ' || *str == '\t' || *str == '\b'
 			|| *str == '\f' || *str == '\v' || *str == '\r')
-		str++;
+		str++; 
 	if (*str == '+' || *str == '-')
 		if (*str++ == '-')
 			negative++;
 	while (*str >= '0' && *str <= '9')
 	{
 		sum = sum * 10 + *str++ - 48;
-		if (sum > 9223372036854775807 && negative != 0)
-			return (0);
-		else if (sum > 9223372036854775807 && negative == 0)
-			return (-1);
+		if (sum > 2147483648 && negative != 0)
+		{
+			write(1, "Error\n", 6);
+			exit(EXIT_FAILURE);
+		}
+		else if (sum > 2147483647 && negative == 0)
+		{
+			write(1, "Error\n", 6);
+			exit(EXIT_FAILURE);
+		}
 	}
-	//if (*str != '\0' || *str != '\n')
-	//	return (-1);
 	if (negative != 0)
 		return (-sum);
 	else

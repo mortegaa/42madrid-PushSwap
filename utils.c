@@ -12,31 +12,10 @@
 
 #include "includes/push_swap.h"
 
-void	message(char *str)
+void	exit_mess(char *str)
 {
-	ft_putstr_fd(str, 1);
-}
-
-int	find_and_catch(t_num *a, t_num *b, int max)
-{
-	int i;
-	int	cont;
-
-	i = -1;
-	cont = 0;
-	while (++i < a->len)
-		if (a->stack[i] == max)
-			break ;
-	printf("alen: %d |%d|\n", a->len, i);
-	//sleep(1);
-	if (i++ <= a->len / 2)
-		while (--i >= 0)
-			cont += rra(a);
-	else if (i > a->len / 2 && i < a->len)
-		while ((a->len - ++i) >= 0)
-			cont += ra(a);
-	checker_stack(a, b);
-	return (cont);
+	write(1, str, ft_strlen(str));
+	exit(EXIT_FAILURE);
 }
 
 int	search_max(t_num *a)
@@ -65,7 +44,7 @@ int	search_min(t_num *a)
 	return (min);
 }
 
-int		rrr(t_num *a, t_num *b)
+int		rrr(t_num *a, t_num *b, char ch)
 {
 	int i;
 	int c;
@@ -84,6 +63,7 @@ int		rrr(t_num *a, t_num *b)
 		b->stack[i] = b->stack[i + 1];
 		b->stack[i + 1] = c;
 	}
-	printf("rrr\n");
+	if (ch)
+		write(1, "rrr\n", 4);
 	return (1);
 }

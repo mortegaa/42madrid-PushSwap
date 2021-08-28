@@ -13,7 +13,7 @@
 #include "includes/push_swap.h"
 #include <stdio.h>
 
-int	sa(t_num *a)
+int	sa(t_num *a, char ch)
 {
 	int	c;
 
@@ -23,11 +23,12 @@ int	sa(t_num *a)
 		a->stack[a->len - 1] = a->stack[a->len - 2];
 		a->stack[a->len - 2] = c;
 	}
-	printf("sa\n");
+	if (ch)
+		write(1, "sa\n", 3);
 	return (1);
 }
 
-int	sb(t_num *b)
+int	sb(t_num *b, char ch)
 {
 	int	c;
 
@@ -37,11 +38,12 @@ int	sb(t_num *b)
 		b->stack[b->len - 1] = b->stack[b->len - 2];
 		b->stack[b->len - 2] = c;
 	}
-	printf("sb\n");
+	if (ch)
+		write(1, "sb\n", 3);
 	return (1);
 }
 
-int	ss(t_num *a, t_num *b)
+int	ss(t_num *a, t_num *b, char ch)
 {
 	int c;
 
@@ -57,20 +59,27 @@ int	ss(t_num *a, t_num *b)
 		b->stack[b->len - 1] = b->stack[b->len - 2];
 		b->stack[b->len - 2] = c;
 	}
-	printf("ss\n");
+	if (ch)
+		write(1, "ss\n", 3);
 	return (1);
 }
 
-int	pb(t_num *a, t_num *b)
+int	pb(t_num *a, t_num *b, char ch)
 {
+	if (!a->len)
+		return (0);
 	b->stack[b->len++] = a->stack[--a->len];
-	printf("pb\n");
+	if (ch)
+		write(1, "pb\n", 3);
 	return (1);
 }
 
-int	pa(t_num *a, t_num *b)
+int	pa(t_num *a, t_num *b, char ch)
 {
+	if (!b->len)
+		return (0);
 	a->stack[a->len++] = b->stack[--b->len];
-	printf("pa\n");
+	if (ch)
+		write(1, "pa\n", 3);
 	return (1);
 }

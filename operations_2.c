@@ -12,7 +12,7 @@
 
 #include "includes/push_swap.h"
 
-int	rra(t_num *a)
+int	rra(t_num *a, char ch)
 {
 	int	i;
 	int	c;
@@ -24,11 +24,12 @@ int	rra(t_num *a)
 		a->stack[i] = a->stack[i + 1];
 		a->stack[i + 1] = c;
 	}
-	printf("rra\n");
+	if (ch)
+		write(1, "rra\n", 4);
 	return (1);
 }
 
-int	rrb(t_num *b)
+int	rrb(t_num *b, char ch)
 {
 	int	i;
 	int	c;
@@ -40,11 +41,12 @@ int	rrb(t_num *b)
 		b->stack[i] = b->stack[i + 1];
 		b->stack[i + 1] = c;
 	}
-	printf("rrb\n");
+	if (ch)
+		write(1, "rrb\n", 4);
 	return (1);
 }
 
-int	rr(t_num *a, t_num *b)
+int	rr(t_num *a, t_num *b, char ch)
 {
 	int	i;
 	int	c;
@@ -63,11 +65,12 @@ int	rr(t_num *a, t_num *b)
 		b->stack[b->len - i] = b->stack[b->len - i - 1];
 		b->stack[b->len - i - 1] = c;
 	}
-	printf("rr\n");
+	if (ch)
+		write(1, "rr\n", 3);
 	return (1);
 }
 
-int	ra(t_num *a)
+int	ra(t_num *a, char ch)
 {
 	int	i;
 	int	c;
@@ -79,11 +82,12 @@ int	ra(t_num *a)
 		a->stack[a->len - i] = a->stack[a->len - i - 1];
 		a->stack[a->len - i - 1] = c;
 	}
-	printf("ra\n");
+	if (ch)
+		write(1, "ra\n", 3);
 	return (1);
 }
 
-int	rb(t_num *b)
+int	rb(t_num *b, char ch)
 {
 	int	i;
 	int	c;
@@ -95,6 +99,7 @@ int	rb(t_num *b)
 		b->stack[b->len - i] = b->stack[b->len - i - 1];
 		b->stack[b->len - i - 1] = c;
 	}
-	printf("rb\n");
+	if (ch)
+		write(1, "rb\n", 3);
 	return (1);
 }

@@ -2,10 +2,26 @@
 			PushSwap cositas
 *******************************************************
 
-	-> Conseguir otro algoritmo
+i-> Conseguir otro algoritmo
 
-	-> Hacer un algoritmo para los de 3 y 5
+	// Hacer un algoritmo para los de 3 y 5 //
+		- Repasar la funcion, reducir lineas //
 
-	-> Repasar el parser numeros repetidos //
+	// Repasar el parser numeros repetidos //
+		- Implementar no dejar numeros mayores que MAX_INT ni menores que MIN_INT //
+		- Argumentos vacios: ERROR //
 
-	-> Si me apetece hago el checker
+	-> Si me apetece hago el checker //
+		- Incluir el GNL
+		- Hacer pruebas
+
+	-> Pasarle el tester de abello-r
+
+	// Hacer exit_mess
+		-  Imprime mensaje de error y sale del programa (reduce 3 lineas cada vez)
+
+	// Reducir lineas a tope
+	
+	// Hacerlo mas conciso
+
+	-> Pasarle la norminnete
