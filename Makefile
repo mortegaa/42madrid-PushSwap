@@ -6,7 +6,7 @@
 #    By: mortega- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/30 23:52:56 by mortega-          #+#    #+#              #
-#    Updated: 2021/08/14 09:58:48 by mortega-         ###   ########.fr        #
+#    Updated: 2021/08/30 12:34:46 by mortega-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,11 +59,13 @@ checker:	${CH_NAME}
 
 clean:
 			rm -f ${PS_OBJS}
+			rm -f ${CH_OBJS}
 			@make -s -C ${Libdir} clean
 			@make -s -C ${Gnldir} clean
 
 fclean:		clean
 			rm -f $(NAME)
+			rm -f ${CH_NAME}
 			@make -s -C ${Libdir} fclean
 			@make -s -C ${Gnldir} fclean
 

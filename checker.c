@@ -32,7 +32,7 @@ void	order_stack(t_num *a, t_num *b)
 {
 	char	*line;
 
-	while (get_next_line(&line, 0) > 0)
+	while (get_next_line(0, &line) > 0)
 	{
 		which_operation(a, b, line);
 		free(line);

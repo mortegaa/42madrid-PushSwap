@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 02:31:49 by mortega-          #+#    #+#             */
-/*   Updated: 2021/08/25 15:58:21 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/08/30 12:28:39 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PUSH_SWAP_H
 
 # include "../srcs/LIBFT/libft.h"
+# include "../srcs/GNL/get_next_line.h"
+
 #include <stdio.h>  //
 typedef struct		s_num
 {
