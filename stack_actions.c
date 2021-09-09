@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_actions.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/09 14:58:16 by mortega-          #+#    #+#             */
+/*   Updated: 2021/09/09 18:44:11 by mortega-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "includes/push_swap.h"
 
 void	print_stack(t_num a, t_num b)
@@ -36,7 +48,7 @@ int	fill_stack(t_num *a, char **argv, int len)
 		args = ft_split(*argv, ' ');
 		j = 0;
 		while (j < slen)
-		{ 
+		{
 			a->stack[--k] = ft_atoi(args[j++]);
 			l = len;
 			while (--l > k)
@@ -78,7 +90,7 @@ int	check_input(char **args)
 
 int	check_stack(t_num *a, t_num *b)
 {
-	int i;
+	int	i;
 
 	if (b->len)
 		return (0);

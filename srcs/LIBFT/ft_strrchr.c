@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 16:39:48 by mortega-          #+#    #+#             */
-/*   Updated: 2020/02/01 00:18:11 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 17:40:46 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t i;
+	size_t	i;
 
 	i = -1;
 	while (++i <= ft_strlen(s))

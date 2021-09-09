@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 02:31:49 by mortega-          #+#    #+#             */
-/*   Updated: 2021/08/30 12:28:39 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 18:28:08 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 # include "../srcs/LIBFT/libft.h"
 # include "../srcs/GNL/get_next_line.h"
 
-#include <stdio.h>  //
-typedef struct		s_num
+typedef struct s_num
 {
 	int		len;
 	int		*stack;
 }			t_num;
+
+void	ft_leaks(void);
 
 /*
 **	PushSwap functions
@@ -47,7 +48,6 @@ void	print_stack(t_num a, t_num b);
 int		fill_stack(t_num *a, char **argv, int len);
 int		check_input(char **args);
 int		check_stack(t_num *a, t_num *b);
-
 
 /*
 **	utils.c functions

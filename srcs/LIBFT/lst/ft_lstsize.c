@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 15:55:44 by mortega-          #+#    #+#             */
-/*   Updated: 2021/07/31 00:28:34 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 17:53:18 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int cont;
+	int	cont;
 
 	cont = 0;
 	while (lst)

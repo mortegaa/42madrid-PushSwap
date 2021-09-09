@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 14:44:12 by mortega-          #+#    #+#             */
-/*   Updated: 2021/07/31 00:16:02 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 18:21:03 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_vector	ft_minusvector(t_vector a, t_vector b)
 {
-	t_vector result;
+	t_vector	result;
 
 	result.x = a.x - b.x;
 	result.y = a.y - b.y;

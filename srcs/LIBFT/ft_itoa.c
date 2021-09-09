@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 18:05:14 by mortega-          #+#    #+#             */
-/*   Updated: 2020/02/01 17:18:34 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 16:53:47 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static long int	count(long n)
 	return (i);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	long	nb;
 	int		i;
@@ -42,12 +42,10 @@ char			*ft_itoa(int n)
 	nb = (long)n;
 	minus = 0;
 	i = 1 + count(nb);
-	if (nb < 0)
-	{
-		nb = nb * -1;
-		minus = 1;
-	}
-	if (!(snum = (char *)malloc(sizeof(char) * i + 1)))
+	if (nb < 0 && minus++)
+		nb = -nb;
+	snum = (char *)malloc(sizeof(char) * i + 1);
+	if (!snum)
 		return (0);
 	snum[i] = '\0';
 	while (--i >= 0)

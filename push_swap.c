@@ -6,12 +6,18 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 00:01:28 by mortega-          #+#    #+#             */
-/*   Updated: 2021/08/25 16:43:45 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 15:30:31 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 #include <stdio.h>
+
+void	ft_leaks(void)
+{
+	system("leaks push_swap");
+	exit(0);
+}
 
 int	main(int argc, char **argv)
 {
@@ -27,7 +33,6 @@ int	main(int argc, char **argv)
 	b.stack = (int *)malloc(sizeof(int) * a.len);
 	b.len = 0;
 	fill_stack(&a, argv, a.len);
-//	print_stack(a, b);
 	if (check_stack(&a, &b))
 		return (1);
 	if (a.len < 4)
@@ -36,6 +41,6 @@ int	main(int argc, char **argv)
 		short_alg_5(&a, &b);
 	else
 		algorithm(&a, &b);
-//	print_stack(a, b);
+	ft_leaks();
 	return (1);
 }

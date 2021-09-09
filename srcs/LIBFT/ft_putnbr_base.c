@@ -6,16 +6,16 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 18:11:36 by mortega-          #+#    #+#             */
-/*   Updated: 2020/03/05 14:50:01 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 17:03:11 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		equal(char *base)
+int	equal(char *base)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (base[i] != 0)
@@ -45,8 +45,8 @@ void	rec(int nbr, int cont, char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int cont;
-	int flag;
+	int	cont;
+	int	flag;
 
 	flag = 0;
 	cont = 0;

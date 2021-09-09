@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 14:56:07 by mortega-          #+#    #+#             */
-/*   Updated: 2020/02/01 00:06:03 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 16:48:36 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t	i;
 	void	*aux;
 
-	if (!(aux = malloc(count * size)))
+	aux = malloc(count * size);
+	if (!aux)
 		return (0);
 	i = -1;
 	while (++i < size * count)

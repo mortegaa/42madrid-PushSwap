@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 16:30:04 by mortega-          #+#    #+#             */
-/*   Updated: 2021/07/31 06:48:27 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 16:46:33 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,21 @@
 
 int	ft_atoi(const char *str)
 {
-	int				negative;
-	unsigned long long		sum;
+	int					negative;
+	unsigned long long	sum;
 
 	negative = 0;
 	sum = 0;
-	while (*str == '\n' || *str == ' ' || *str == '\t' || *str == '\b'
-			|| *str == '\f' || *str == '\v' || *str == '\r')
-		str++; 
+	while (*str == ' ' || *str == '\t')
+		str++;
 	if (*str == '+' || *str == '-')
 		if (*str++ == '-')
 			negative++;
 	while (*str >= '0' && *str <= '9')
 	{
 		sum = sum * 10 + *str++ - 48;
-		if (sum > 2147483648 && negative != 0)
-		{
-			write(1, "Error\n", 6);
-			exit(EXIT_FAILURE);
-		}
-		else if (sum > 2147483647 && negative == 0)
+		if ((sum > 2147483648 && negative != 0)
+			|| (sum > 2147483647 && negative == 0))
 		{
 			write(1, "Error\n", 6);
 			exit(EXIT_FAILURE);

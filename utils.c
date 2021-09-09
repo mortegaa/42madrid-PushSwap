@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 00:36:50 by mortega-          #+#    #+#             */
-/*   Updated: 2021/08/25 16:43:45 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 18:47:12 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	exit_mess(char *str)
 {
 	write(2, str, ft_strlen(str));
+	//ft_leaks();
 	exit(EXIT_FAILURE);
 }
 
@@ -44,10 +45,10 @@ int	search_min(t_num *a)
 	return (min);
 }
 
-int		rrr(t_num *a, t_num *b, char ch)
+int	rrr(t_num *a, t_num *b, char ch)
 {
-	int i;
-	int c;
+	int	i;
+	int	c;
 
 	i = -1;
 	while (++i < a->len - 1)

@@ -6,20 +6,18 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 20:21:46 by mortega-          #+#    #+#             */
-/*   Updated: 2021/08/17 13:13:35 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 15:32:41 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include "../LIBFT/libft.h"
 
-int	filline(char **line, char **stat, int count, char **buffer)
+int	filline(char **line, char **stat, int count)
 {
 	char	*tmp;
 	ssize_t	i;
 
-	if (*buffer)
-		free(*buffer);
 	if (count == 0)
 	{
 		*line = ft_strdup(*stat);
@@ -42,19 +40,19 @@ int	filline(char **line, char **stat, int count, char **buffer)
 int	get_next_line(int fd, char **line)
 {
 	ssize_t		count;
-	char		*buffer;
+	char		buffer[BUFFER_SIZE + 1];
 	char		*tmp;
 	static char	*stat[4096];
 
-	if (fd < 0 || !line || BUFFER_SIZE <= 0 || (buffer = 0) || read(fd, buffer,
-				0) == -1 || !(buffer = (char *)malloc(BUFFER_SIZE + 1)))
+	if (fd < 0 || !line || BUFFER_SIZE <= 0 || read(fd, buffer, 0) == -1)
 		return (-1);
 	if (!stat[fd])
 		stat[fd] = ft_strdup("");
 	count = 1;
 	if (ft_strchr(stat[fd], '\n'))
-		return (filline(&*line, &stat[fd], count, &buffer));
-	while ((count = read(fd, buffer, BUFFER_SIZE)) > 0)
+		return (filline(&*line, &stat[fd], count));
+	count = read(fd, buffer, BUFFER_SIZE);
+	while (count > 0)
 	{
 		buffer[count] = '\0';
 		tmp = stat[fd];
@@ -62,6 +60,7 @@ int	get_next_line(int fd, char **line)
 		free(tmp);
 		if (ft_strchr(stat[fd], '\n'))
 			break ;
+		count = read(fd, buffer, BUFFER_SIZE);
 	}
-	return (filline(&*line, &stat[fd], count, &buffer));
+	return (filline(&*line, &stat[fd], count));
 }

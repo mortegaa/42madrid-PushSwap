@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 22:15:00 by mortega-          #+#    #+#             */
-/*   Updated: 2020/01/25 05:53:49 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 17:04:45 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int slen;
-
 	if (s)
-	{
-		slen = ft_strlen(s);
-		write(fd, s, slen);
-	}
+		write(fd, s, ft_strlen(s));
 }

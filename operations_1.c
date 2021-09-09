@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 07:29:41 by mortega-          #+#    #+#             */
-/*   Updated: 2021/08/25 15:09:18 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 14:56:40 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	sb(t_num *b, char ch)
 
 int	ss(t_num *a, t_num *b, char ch)
 {
-	int c;
+	int	c;
 
 	if (a->len > 2)
 	{

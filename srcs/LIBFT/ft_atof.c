@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 17:24:08 by mortega-          #+#    #+#             */
-/*   Updated: 2021/02/25 18:26:32 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 18:26:22 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,28 @@
 float	ft_atof(const char *str)
 {
 	int		i;
-	float	numero;
-	float	decimal;
+	float	numdec[2];
 	char	negative;
 
 	i = 0;
 	negative = 0;
-	numero = 0;
-	decimal = 0;
+	numdec[0] = 0;
+	numdec[1] = 0;
 	while (*str == ' ' || *str == '\t')
 		str++;
 	if (*str == '-' && str++)
 		negative++;
 	while (*str >= '0' && *str <= '9')
-		numero = numero * 10 + *str++ - 48;
-	*str == '.' ? str++ : 0;
+		numdec[0] = numdec[0] * 10 + *str++ - 48;
+	if (*str == '.')
+		str++;
 	while (str[i] >= '0' && str[i] <= '9')
-		decimal = decimal * 10 + str[i++] - 48;
+		numdec[1] = numdec[1] * 10 + str[i++] - 48;
 	while (i-- > 0)
-		decimal = decimal / 10;
-	if (numero == 0 && negative > 0)
-		decimal = decimal * -1;
+		numdec[1] = numdec[1] / 10;
+	if (numdec[0] == 0 && negative > 0)
+		numdec[1] = -numdec[1];
 	else if (negative > 0)
-		numero = numero * -1;
-	return (numero + decimal);
+		numdec[0] = -numdec[0];
+	return (numdec[0] + numdec[1]);
 }

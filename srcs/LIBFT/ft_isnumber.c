@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 18:28:23 by mortega-          #+#    #+#             */
-/*   Updated: 2021/02/25 18:32:06 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 16:50:43 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isnumber(char *num)
 {
-	int points;
+	int	points;
 
 	points = 0;
 	if (!(*num >= 48 && *num <= 57) && !(*num == 45) && !(*num == 46))
@@ -28,7 +28,7 @@ int	ft_isnumber(char *num)
 		else if (*num == 45 && !(*(num + 1) >= 48 && *(num + 1) <= 57))
 			return (0);
 		else if (*num == 46 && !(*(num - 1) >= 48 && *(num - 1) <= 57)
-					&& !(*(num + 1) >= 48 && *(num + 1) <= 57))
+			&& !(*(num + 1) >= 48 && *(num + 1) <= 57))
 			return (0);
 		num++;
 	}

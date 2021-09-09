@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 19:00:00 by mortega-          #+#    #+#             */
-/*   Updated: 2021/02/26 14:08:59 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 17:29:20 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,24 @@ char	**ft_split(char const *s, char c)
 	char	**spl;
 	int		i;
 
-	if ((i = 0) && !s)
-		return (NULL);
 	count = !(--s);
+	i = 0;
 	while (*(++s) != '\0' && (++i))
 		if (*s != c && (*(s + 1) == c || *(s + 1) == '\0'))
 			count++;
-	if (!(spl = (char **)malloc(sizeof(char *) * (count + 1))))
-		return (NULL);
+	spl = (char **)malloc(sizeof(char *) * (count + 1));
 	i = !(s -= i + 1);
 	while (*(++s))
-		if (*s != c && (count = 1))
+	{
+		count = 1;
+		if (*s != c)
 		{
 			while (*(s + count) && *(s + count) != c)
 				count++;
 			spl[i++] = ft_substr(s, 0, count);
 			s = s + count - 1;
 		}
-	return (!(spl[i] = NULL) ? spl : NULL);
+	}
+	spl[i] = NULL;
+	return (spl);
 }

@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 22:40:13 by mortega-          #+#    #+#             */
-/*   Updated: 2020/01/25 05:56:24 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 17:03:53 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	recursive(long n, int fd)
 {
-	long nb;
+	long	nb;
 
 	nb = 0;
 	if (n > 9)
@@ -30,7 +30,7 @@ static void	recursive(long n, int fd)
 	}
 }
 
-void		ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	long	nb;
 

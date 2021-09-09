@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/03 13:39:24 by mortega-          #+#    #+#             */
-/*   Updated: 2021/07/31 00:16:56 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 18:23:24 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	ft_quadratic(float const a, float const b, float const c, float *x[2])
 {
-	float q;
-	float discr;
+	float	q;
+	float	discr;
 
 	discr = b * b - 4 * a * c;
 	if (discr < 0)
@@ -27,7 +27,10 @@ char	ft_quadratic(float const a, float const b, float const c, float *x[2])
 	}
 	else
 	{
-		q = (b < 0) ? -0.5 * (b + sqrt(discr)) : -0.5 * (b - sqrt(discr));
+		if (b < 0)
+			q = -0.5 * (b + sqrt(discr));
+		else
+			q = -0.5 * (b - sqrt(discr));
 		*x[0] = q / a;
 		*x[1] = c / q;
 	}

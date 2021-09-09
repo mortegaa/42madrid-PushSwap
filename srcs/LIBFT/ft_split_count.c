@@ -6,15 +6,15 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 20:09:41 by mortega-          #+#    #+#             */
-/*   Updated: 2020/10/29 22:39:56 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/09/09 17:29:47 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_split_count(char *s, char c)
+int	ft_split_count(char *s, char c)
 {
-	int		count;
+	int	count;
 
 	if (!s)
 		return (-1);
