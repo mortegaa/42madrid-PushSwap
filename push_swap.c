@@ -27,14 +27,15 @@ int	main(int argc, char **argv)
 	b.stack = (int *)malloc(sizeof(int) * a.len);
 	b.len = 0;
 	fill_stack(&a, argv, a.len);
-	//print_stack(a, b);
-	check_stack(&a, &b);
+//	print_stack(a, b);
+	if (check_stack(&a, &b))
+		return (1);
 	if (a.len < 4)
 		short_alg_3(&a, search_max(&a));
 	else if (a.len < 6)
 		short_alg_5(&a, &b);
 	else
 		algorithm(&a, &b);
-	//print_stack(a, b);
+//	print_stack(a, b);
 	return (1);
 }

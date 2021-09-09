@@ -11,9 +11,9 @@ i-> Conseguir otro algoritmo
 		- Implementar no dejar numeros mayores que MAX_INT ni menores que MIN_INT //
 		- Argumentos vacios: ERROR //
 
-	-> Si me apetece hago el checker //
-		- Incluir el GNL
-		- Hacer pruebas
+	// Si me apetece hago el checker //
+		- Incluir el GNL //
+		- Hacer pruebas  //
 
 	-> Pasarle el tester de abello-r
 

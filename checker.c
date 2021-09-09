@@ -2,27 +2,27 @@
 
 void	which_operation(t_num *a, t_num *b, char *line)
 {
-	if (ft_strcmp(line, "sa"))
+	if (!ft_strcmp(line, "sa"))
 		sa(a, 0);
-	else if (ft_strcmp(line, "sb"))
+	else if (!ft_strcmp(line, "sb"))
 		sb(b, 0);
-	else if (ft_strcmp(line, "ss"))
+	else if (!ft_strcmp(line, "ss"))
 		ss(a, b, 0);
-	else if (ft_strcmp(line, "pa"))
+	else if (!ft_strcmp(line, "pa"))
 		pa(a, b, 0);
-	else if (ft_strcmp(line, "pb"))
+	else if (!ft_strcmp(line, "pb"))
 		pb(a, b, 0);
-	else if (ft_strcmp(line, "ra"))
+	else if (!ft_strcmp(line, "ra"))
 		ra(a, 0);
-	else if (ft_strcmp(line, "rb"))
+	else if (!ft_strcmp(line, "rb"))
 		rb(b, 0);
-	else if (ft_strcmp(line, "rr"))
+	else if (!ft_strcmp(line, "rr"))
 		rr(a, b, 0);
-	else if (ft_strcmp(line, "rra"))
+	else if (!ft_strcmp(line, "rra"))
 		rra(a, 0);
-	else if (ft_strcmp(line, "rrb"))
+	else if (!ft_strcmp(line, "rrb"))
 		rrb(b, 0);
-	else if (ft_strcmp(line, "rrr"))
+	else if (!ft_strcmp(line, "rrr"))
 		rrr(a, b, 0);
 	else
 		exit_mess("Error\nNot valid operation\n");

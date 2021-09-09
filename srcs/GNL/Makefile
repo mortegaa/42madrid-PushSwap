@@ -10,7 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS 	= 	get_next_line.c get_next_line_utils.c ft_count_lines.c
+Libdir	=	../LIBFT/ft_str
+
+SRCS 	= 	get_next_line.c ft_count_lines.c ${Libdir}len.c ${Libdir}join.c ../LIBFT/ft_substr.c ${Libdir}dup.c ${Libdir}chr.c
 
 OBJS 	= 	${SRCS:.c=.o}
 

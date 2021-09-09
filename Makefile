@@ -26,9 +26,9 @@ Gnldir	=	./srcs/GNL
 
 gnlname	=	gnl.a
 
-Lib	=	${Libdir}/${libname}
-
 Gnl	=	${Gnldir}/${gnlname}
+
+Lib	=	${Libdir}/${libname}
 
 NAME	=	push_swap
 
@@ -43,12 +43,12 @@ $(NAME):	${PS_OBJS} ${Lib}
 			@gcc -o ${NAME} ${PS_OBJS} ${Lib}
 
 $(CH_NAME):	${CH_OBJS} ${Lib} ${Gnl}
-		@gcc - o ${CH_NAME} ${CH_OBJS} ${Lib} ${Gnl}
+		@gcc -o ${CH_NAME} ${CH_OBJS} ${Lib} ${Gnl}
 
 all:		${NAME} ${CH_NAME}
 
 $(Lib):
-			@make -C ${Libdir} > /dev/null 2>&1
+		@make -C ${Libdir}
 
 $(Gnl):
 		@make -C ${Gnldir} > /dev/null 2>&1

@@ -27,7 +27,6 @@ typedef struct		s_num
 **	PushSwap functions
 */
 
-
 void	short_alg_3(t_num *a, int max);
 void	short_alg_5(t_num *a, t_num *b);
 void	algorithm(t_num *a, t_num *b);

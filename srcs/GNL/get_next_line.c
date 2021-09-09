@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "../LIBFT/libft.h"
 
 int	filline(char **line, char **stat, int count, char **buffer)
 {

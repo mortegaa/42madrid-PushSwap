@@ -83,19 +83,65 @@ void	find_and_catch(t_num *a, t_num *b, int max)
 	else if (i > a->len / 2 && i < a->len)
 		while ((a->len - ++i) >= 0)
 			ra(a, 1);
-
 	pb(a, b, 1);
 }
 
-void	algorithm(t_num *a, t_num *b)
+t_num	normalized_stack(t_num *a)
 {
-	int	num;
+	t_num	normi;
+	int	k;
+	int	min;
+	int	i;
 	int	max;
 
-	num = search_min(a) - 1;
+	normi.len = a->len;
+	normi.stack = (int *)malloc(sizeof(int) * normi.len);
+	k = 0;
+	min = search_min(a);
 	max = search_max(a);
-	while (++num <= max)
-		find_and_catch(a, b, num);
-	while (b->len)
-		pa(a, b, 1);
+	while (min <= max)
+	{
+		i = -1;
+		while (min <= a->stack[++i])
+			if (min == a->stack[i])
+			{
+				normi.stack[i] = k++;
+				a->stack[i] = max + 1;
+			}
+		min++;
+	}
+	return (normi);
+}
+
+void	algorithm(t_num *a, t_num *b)
+{	
+	int	max_bits;
+	int	num;
+	int	j;
+	int	i;
+	int	max;
+
+	*a = normalized_stack(a);
+	max = search_max(a);
+	max_bits = 0;
+	while ((max >> max_bits) != 0)
+		++max_bits;
+
+	i = 0;
+	while (i < max_bits)
+	{
+		j = a->len;
+		while (j > 0)
+		{
+			num = a->stack[a->len - 1];
+			if (num >= 0 && ((num >> i) & 1) == 0)
+				pb(a, b, 1);
+			else
+				ra(a, 1);
+			j--;
+		}
+		while (b->len)
+			pa(a, b, 1);
+		i++;
+	}
 }

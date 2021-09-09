@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
-#include <stdio.h>
 
 int	sa(t_num *a, char ch)
 {
