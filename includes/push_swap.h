@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 02:31:49 by mortega-          #+#    #+#             */
-/*   Updated: 2021/09/09 18:28:08 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/10/07 18:30:24 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 typedef struct s_num
 {
-	int		len;
-	int		*stack;
+	int		l;
+	int		*stk;
 }			t_num;
 
 void	ft_leaks(void);

@@ -6,11 +6,13 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 16:30:04 by mortega-          #+#    #+#             */
-/*   Updated: 2021/09/09 16:46:33 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/10/07 19:08:37 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../../includes/push_swap.h"
+#include <stdio.h>
 
 int	ft_atoi(const char *str)
 {
@@ -25,19 +27,13 @@ int	ft_atoi(const char *str)
 		if (*str++ == '-')
 			negative++;
 	if (*str < '0' || *str > '9')
-	{
-		write(1, "Error\n", 6);
-		exit(EXIT_FAILURE);
-	}
+		exit_mess("No number character\n");
 	while (*str >= '0' && *str <= '9')
 	{
 		sum = sum * 10 + *str++ - 48;
 		if ((sum > 2147483648 && negative != 0)
 			|| (sum > 2147483647 && negative == 0))
-		{
-			write(1, "Error\n", 6);
-			exit(EXIT_FAILURE);
-		}
+			exit_mess("Non-INT Number\n");
 	}
 	if (negative != 0)
 		return (-sum);

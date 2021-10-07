@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 14:55:28 by mortega-          #+#    #+#             */
-/*   Updated: 2021/09/09 14:55:56 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/10/07 17:44:28 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	which_operation(t_num *a, t_num *b, char *line)
 	else if (!ft_strcmp(line, "rrr"))
 		rrr(a, b, 0);
 	else
-		exit_mess("Error\nNot valid operation\n");
+		exit_mess("Not valid operation\n");
 }
 
 void	order_stack(t_num *a, t_num *b)
@@ -60,12 +60,12 @@ int	main(int argc, char **argv)
 	if (argc < 1)
 		return (-1);
 	else if (argc < 2)
-		exit_mess("Error\nInsufficient arguments\n");
-	a.len = check_input(argv);
-	a.stack = (int *)malloc(sizeof(int) * a.len);
-	b.stack = (int *)malloc(sizeof(int) * a.len);
-	b.len = 0;
-	fill_stack(&a, argv, a.len);
+		exit_mess("Insufficient arguments\n");
+	a.l = check_input(argv);
+	a.stk = (int *)malloc(sizeof(int) * a.l);
+	b.stk = (int *)malloc(sizeof(int) * a.l);
+	b.l = 0;
+	fill_stack(&a, argv, a.l);
 	order_stack(&a, &b);
 	if (check_stack(&a, &b))
 		write(1, "OK\n", 3);

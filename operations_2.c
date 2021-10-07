@@ -6,7 +6,7 @@
 /*   By: mortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 07:38:40 by mortega-          #+#    #+#             */
-/*   Updated: 2021/08/24 22:46:00 by mortega-         ###   ########.fr       */
+/*   Updated: 2021/10/07 17:32:24 by mortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	rra(t_num *a, char ch)
 	int	c;
 
 	i = -1;
-	while (++i < a->len - 1)
+	while (++i < a->l - 1)
 	{
-		c = a->stack[i];
-		a->stack[i] = a->stack[i + 1];
-		a->stack[i + 1] = c;
+		c = a->stk[i];
+		a->stk[i] = a->stk[i + 1];
+		a->stk[i + 1] = c;
 	}
 	if (ch)
 		write(1, "rra\n", 4);
@@ -35,11 +35,11 @@ int	rrb(t_num *b, char ch)
 	int	c;
 
 	i = -1;
-	while (++i < b->len - 1)
+	while (++i < b->l - 1)
 	{
-		c = b->stack[i];
-		b->stack[i] = b->stack[i + 1];
-		b->stack[i + 1] = c;
+		c = b->stk[i];
+		b->stk[i] = b->stk[i + 1];
+		b->stk[i + 1] = c;
 	}
 	if (ch)
 		write(1, "rrb\n", 4);
@@ -52,18 +52,18 @@ int	rr(t_num *a, t_num *b, char ch)
 	int	c;
 
 	i = 0;
-	while (++i < a->len)
+	while (++i < a->l)
 	{
-		c = a->stack[a->len - i];
-		a->stack[a->len - i] = a->stack[a->len - i - 1];
-		a->stack[a->len - i - 1] = c;
+		c = a->stk[a->l - i];
+		a->stk[a->l - i] = a->stk[a->l - i - 1];
+		a->stk[a->l - i - 1] = c;
 	}
 	i = 0;
-	while (++i < b->len)
+	while (++i < b->l)
 	{
-		c = b->stack[b->len - i];
-		b->stack[b->len - i] = b->stack[b->len - i - 1];
-		b->stack[b->len - i - 1] = c;
+		c = b->stk[b->l - i];
+		b->stk[b->l - i] = b->stk[b->l - i - 1];
+		b->stk[b->l - i - 1] = c;
 	}
 	if (ch)
 		write(1, "rr\n", 3);
@@ -76,11 +76,11 @@ int	ra(t_num *a, char ch)
 	int	c;
 
 	i = 0;
-	while (++i < a->len)
+	while (++i < a->l)
 	{
-		c = a->stack[a->len - i];
-		a->stack[a->len - i] = a->stack[a->len - i - 1];
-		a->stack[a->len - i - 1] = c;
+		c = a->stk[a->l - i];
+		a->stk[a->l - i] = a->stk[a->l - i - 1];
+		a->stk[a->l - i - 1] = c;
 	}
 	if (ch)
 		write(1, "ra\n", 3);
@@ -93,11 +93,11 @@ int	rb(t_num *b, char ch)
 	int	c;
 
 	i = 0;
-	while (++i < b->len)
+	while (++i < b->l)
 	{
-		c = b->stack[b->len - i];
-		b->stack[b->len - i] = b->stack[b->len - i - 1];
-		b->stack[b->len - i - 1] = c;
+		c = b->stk[b->l - i];
+		b->stk[b->l - i] = b->stk[b->l - i - 1];
+		b->stk[b->l - i - 1] = c;
 	}
 	if (ch)
 		write(1, "rb\n", 3);
