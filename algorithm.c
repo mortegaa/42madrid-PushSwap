@@ -40,31 +40,10 @@ void	short_alg_3(t_num *a, int max)
 void	short_alg_5(t_num *a, t_num *b)
 {
 	while (a->len > 3)
-		pb(a, b, 1);
+		find_and_catch(a, b, search_min(a));
 	short_alg_3(a, search_max(a));
-	if (b->len > 1 && b->stack[0] < b->stack[1])
-		sb(b, 1);
 	while (b->len)
-	{
-		if (a->stack[a->len - 1] > b->stack[b->len - 1] && a->stack[0] < b->stack[b->len - 1])
-			pa(a, b, 1);
-		else if (a->stack[0] == search_max(a)
-			&& a->stack[0] < b->stack[b->len - 1])
-		{
-			pa(a, b, 1);
-			ra(a, 1);
-		}
-		else if (a->stack[a->len - 1] < b->stack[b->len - 1]
-			&& a->stack[a->len - 2] > b->stack[b->len - 1])
-		{
-			ra(a, 1);
-			pa(a, b, 1);
-		}
-		else
-			ra(a, 1);
-	}
-	while (!check_stack(a, b))
-		ra(a, 1);
+		pa(a, b, 1);
 }
 
 void	find_and_catch(t_num *a, t_num *b, int max)

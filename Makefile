@@ -39,13 +39,13 @@ CFLAGS	=	-Wall -Werror -Wextra
 .c.o:
 		@gcc ${CFLAGS} -c $< -o ${<:.c=.o}
 
+all:		${NAME} ${CH_NAME}
+
 $(NAME):	${PS_OBJS} ${Lib}
 			@gcc -o ${NAME} ${PS_OBJS} ${Lib}
 
 $(CH_NAME):	${CH_OBJS} ${Lib} ${Gnl}
 		@gcc -o ${CH_NAME} ${CH_OBJS} ${Lib} ${Gnl}
-
-all:		${NAME} ${CH_NAME}
 
 $(Lib):
 		@make -C ${Libdir}

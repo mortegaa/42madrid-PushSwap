@@ -24,6 +24,11 @@ int	ft_atoi(const char *str)
 	if (*str == '+' || *str == '-')
 		if (*str++ == '-')
 			negative++;
+	if (*str < '0' || *str > '9')
+	{
+		write(1, "Error\n", 6);
+		exit(EXIT_FAILURE);
+	}
 	while (*str >= '0' && *str <= '9')
 	{
 		sum = sum * 10 + *str++ - 48;

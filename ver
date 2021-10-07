@@ -2,7 +2,8 @@
 			PushSwap cositas
 *******************************************************
 
-i-> Conseguir otro algoritmo
+	// Conseguir otro algoritmo
+		- BIT SORT ;)
 
 	// Hacer un algoritmo para los de 3 y 5 //
 		- Repasar la funcion, reducir lineas //
@@ -15,8 +16,6 @@ i-> Conseguir otro algoritmo
 		- Incluir el GNL //
 		- Hacer pruebas  //
 
-	-> Pasarle el tester de abello-r
-
 	// Hacer exit_mess
 		-  Imprime mensaje de error y sale del programa (reduce 3 lineas cada vez)
 
@@ -24,4 +23,10 @@ i-> Conseguir otro algoritmo
 	
 	// Hacerlo mas conciso
 
+	// Repasar el algoritmo de 5
+
 	-> Pasarle la norminnete
+
+	-> Pasar todas las pruebas de la hoja de correccion
+
+	-> Pasar el tester de abello-r

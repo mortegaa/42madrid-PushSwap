@@ -13,12 +13,6 @@
 #include "includes/push_swap.h"
 #include <stdio.h>
 
-void	ft_leaks(void)
-{
-	system("leaks push_swap");
-	exit(0);
-}
-
 int	main(int argc, char **argv)
 {
 	t_num	a;
@@ -41,6 +35,5 @@ int	main(int argc, char **argv)
 		short_alg_5(&a, &b);
 	else
 		algorithm(&a, &b);
-	ft_leaks();
 	return (1);
 }
